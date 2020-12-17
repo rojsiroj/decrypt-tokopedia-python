@@ -1,10 +1,11 @@
 # Muhamad Sirojudin <rojsiroj | sirojudin.dev@gmail.com>
 import base64
+import json
 from Crypto.Cipher import AES, PKCS1_OAEP
 from Crypto.Hash import SHA256, SHA1
 from Crypto.PublicKey import RSA
 
-def decrypt_tokopedia(secret_response, content_response)
+def decrypt_tokopedia(secret_response, content_response):
 	# Create Key
 	bsecret_response = base64.b64decode(secret_response)
 	rsa_key = RSA.importKey(open('your_rsa_private_file').read()) #Load Your RSA Private Key as a file
@@ -26,4 +27,4 @@ def decrypt_tokopedia(secret_response, content_response)
 	decrypted = cipher.decrypt_and_verify(acipher, tag)
 
 	# Result
-	return decrypted
+	return json.loads(decrypted.decode())
