@@ -2,13 +2,13 @@
 import base64
 import json
 from Crypto.Cipher import AES, PKCS1_OAEP
-from Crypto.Hash import SHA256, SHA1
+from Crypto.Hash import SHA256
 from Crypto.PublicKey import RSA
 
 def decrypt_tokopedia(secret_response, content_response):
 	# Create Key
 	bsecret_response = base64.b64decode(secret_response)
-	rsa_key = RSA.importKey(open('your_rsa_private_file').read()) #Load Your RSA Private Key as a file
+	rsa_key = RSA.importKey(open('your_private_key_file').read()) #Load Your RSA Private Key as a file
 	cipher = PKCS1_OAEP.new(key=rsa_key, hashAlgo=SHA256)
 	key = cipher.decrypt(bsecret_response)
 

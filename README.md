@@ -1,3 +1,9 @@
 # decrypt-tokopedia-python
+Untuk Decrypt Data customer ketika webhook dsb sesuai aturan Tokopedia Open API dengan menggunakan python
 
-Untuk Decrypt Data dari Tokopedia dengan menggunakan python
+### Register Public Key
+https://developer.tokopedia.com/openapi/guide/#/encryption/register
+###Crypto
+```
+pip install pycryptodome
+```
